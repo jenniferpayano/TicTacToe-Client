@@ -2,14 +2,24 @@
 $alt-color: $white;
 $body-bg-color: $gray-200;
 $font-color: $black;
-$column-color: #007bff8c;
+$column-color: rgb(105, 119, 127);
 $black: #000;
+$success-background: #0f0;
 body {
-  background-color: $body-bg-color;
+  background-color: rgb(96, 194, 244);
 }
 #radio-select {
   height: 80px;
-  background-color: green;
+  background-color:  #b0eb00;
+}
+
+.box {
+  background-color: #a6a6a6;
+  border: 1px solid $white;
+  display: flex;
+  position:relative;
+  height: 700px;
+  padding: 10px 50px 20px;
 }
 .sign-form{
   justify-content: center;
@@ -19,34 +29,59 @@ body {
   left: 0px;
   visibility: hidden
 }
-.box {
-  background-color: white;
-  border: 1px solid $white;
+.dash-board{
+  display: grid;
+    width: 300px;
+    height: 300px;
+    grid-template-columns: auto auto auto;
+}
+#c00,
+#c01,
+#c02 {
+  border-top: none;
+}
+#c00,
+#c03,
+#c06, {
+  border-left: none;
+}
+#c06,
+#c07,
+#c08{
+  border-bottom: none;
+}
+
+#c02,
+#c05,
+#c08 {
+  border-right: none;
+}
+.block {
   display: flex;
-  position:relative;
-  height: 700px;
-  padding: 10px 50px 20px;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  border: 3px solid black;
+  transition: background 0.2s ease-in-out;
+}
+
+.success {
+  background-color:  $black;
+  color: $success-background;
+}
+
+.failure {
+  background-color: $black;
+  color: #f00;
 }
 
 .alt-color {
   background-color: $alt-color;
 }
+
 .column-color {
-  background-color: $column-color;
-}
-$success-background: #0f0;
-.border {
-  border: 3px solid $black;
-  margin: 20px;
-  padding: 20px;
-}
-
-.success {
-  color: $success-background;
-  background-color:  $black;
-}
-
-.failure {
-  color: #f00;
-  background-color: $black;
+  background-color: $white;
 }

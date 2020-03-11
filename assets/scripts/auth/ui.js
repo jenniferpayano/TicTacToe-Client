@@ -15,27 +15,27 @@ const signUpFailure = function (error) {
   console.log('signUpFailure data is:', error)
 }
 const signInSuccess = function (data) {
-  $('#message').text('Signed In Successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message1').text('Signed In Successfully')
+  $('#message1').removeClass()
+  $('#message1').addClass('success')
   console.log('signInSuccess data is:', data)
   store.user = data.user
 }
 const signInFailure = function (error) {
-  $('#message').text('Error on sign in')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message1').text('Error on sign in')
+  $('#message1').removeClass()
+  $('#message1').addClass('failure')
   console.log('signInFailure data is:', error)
 }
 const changePasswordSuccess = function (data) {
-  $('#message').text('Password changed Successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message2').text('Password changed Successfully')
+  $('#message2').removeClass()
+  $('#message2').addClass('success')
 }
 const changePasswordFailure = function (error) {
-  $('#message').text('Failed to change password')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message2').text('Failed to change password')
+  $('#message2').removeClass()
+  $('#message2').addClass('failure')
   console.log('changePassword data is:', error)
 }
 

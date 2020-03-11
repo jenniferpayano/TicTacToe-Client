@@ -12,26 +12,26 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
   <script type="text/javascript">
   function displayForm(c){
-  if(c.value == "1"){
+    if(c.value == "1"){
 
-   document.getElementById("sign-up").style.visibility='visible';
-   document.getElementById("sign-in").style.visibility='hidden';
-   document.getElementById("change-password").style.visibility='hidden';
-          }
-          else if(c.value =="2"){
-              document.getElementById("sign-in").style.visibility='visible';
-              document.getElementById("sign-up").style.visibility='hidden';
-              document.getElementById("change-password").style.visibility='hidden';
+      document.getElementById("sign-up").style.visibility='visible';
+      document.getElementById("sign-in").style.visibility='hidden';
+      document.getElementById("change-password").style.visibility='hidden';
+    }
+    else if(c.value =="2"){
+      document.getElementById("sign-in").style.visibility='visible';
+      document.getElementById("sign-up").style.visibility='hidden';
+      document.getElementById("change-password").style.visibility='hidden';
 
-          }
-          else if(c.value =="3"){
-              document.getElementById("change-password").style.visibility='visible';
-              document.getElementById("sign-in").style.visibility='hidden';
-              document.getElementById("sign-up").style.visibility='hidden';
+    }
+    else if(c.value =="3"){
+      document.getElementById("change-password").style.visibility='visible';
+      document.getElementById("sign-in").style.visibility='hidden';
+      document.getElementById("sign-up").style.visibility='hidden';
 
-          }
-          else {}
-       }
+    }
+    else {}
+  }
   </script>
 
 
@@ -41,13 +41,13 @@
     <h1>Tic-Tac-Toe </h1>
     <div class="row">
       <div class="col-12 alt-color" id="radio-select">
-      <p> Please select:</p>
-    		 <label style="display:inline" ><input value="1" type="radio" name="formselector" onclick="displayForm(this)">Sign Up!</label>
-    		    <label style="display:inline" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)">Sign In!</label>
-            <label style="display:inline" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)">Change Password!</label>
-        </div>
-    <div class="col-4 box">
-      <form id="sign-up"  class="sign-form" >
+        <p> Please select:</p>
+        <label style="display:inline" ><input value="1" type="radio" name="formselector" onclick="displayForm(this)">Sign Up!</label>
+        <label style="display:inline" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)">Sign In!</label>
+        <label style="display:inline" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)">Change Password!</label>
+      </div>
+      <div class="col-4 box">
+        <form id="sign-up"  class="sign-form" >
           <fieldset>
             <legend> Sign up! </legend>
             <input type="text" name="credentials[email]" placeholder= "user@email.com">
@@ -57,35 +57,55 @@
             <br/>
             <br/>
             <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <br/>
+            <br/>
             <br/>
             <input type="submit" value="Sign up!">
             <p id="message"></p>
           </fieldset>
-    </form>
-    <form id="sign-in" class="sign-form">
-      <fieldset>
-        <legend> Sign In! </legend>
-        <input type="text" name="credentials[email]" placeholder= "user@email.com">
-        <br/>
-        <br/>
-        <input type="password" name="credentials[password]" placeholder="chocolate">
-        <br/>
-        <br/>
-        <input type="submit" value="Sign In!">
-      </fieldset>
-</form>
-<form id="change-password" class="sign-form">
-      <fieldset>
-       <legend> Change Password! </legend>
-      <input type="password" name="passwords[old]" placeholder="Password">
-      <input type="password" name="passwords[new]" placeholder="Password">
-      <input  type="submit" value="Change Password!">
-      </fieldset>
-      </form>
+        </form>
+        <form id="sign-in" class="sign-form">
+          <fieldset>
+            <legend> Sign In! </legend>
+            <input type="text" name="credentials[email]" placeholder= "user@email.com">
+            <br/>
+            <br/>
+            <input type="password" name="credentials[password]" placeholder="chocolate">
+            <br/>
+            <br/>
+            <input type="submit" value="Sign In!">
+            <p id="message1"></p>
+          </fieldset>
+        </form>
+        <form id="change-password" class="sign-form">
+          <fieldset>
+            <legend> Change Password! </legend>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <br/>
+            <br/>
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <br/>
+            <br/>
+            <input  type="submit" value="Change Password!">
+            <p id="message2"></p>
+          </fieldset>
+        </form>
       </div>
-      <div class="col-8 box column-color">. col-2 </div>
-    </div>
+      <div class="col-8 box column-color">
+        <h1> Let's Play! </h1>
 
-  </body>
+        <div class="dash-board">
+        <div id="c00" class="block"></div>
+        <div id="c01" class="block"></div>
+        <div id="c02" class="block"></div>
+        <div id="c03" class="block"></div>
+        <div id="c04" class="block"></div>
+        <div id="c05" class="block"></div>
+        <div id="c06" class="block"></div>
+        <div id="c07" class="block"></div>
+        <div id="c08" class="block"></div>
+
+</div>
+</div>
+
+</body>
   </html>
