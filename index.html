@@ -40,20 +40,14 @@
   <div class="container">
     <h1>Tic-Tac-Toe </h1>
     <div class="row">
-      <div class="col-12 box alt-color">
-
-      <p> Please select:</p> <br>
-
-      <form>
-    		 <label style="display:inline-block" ><input value="1" type="radio" name="formselector" onclick="displayForm(this)">Sign Up!</label>
-    		    <br>
-    		    <label style="display:inline-block" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)">Sign In!</label>
-            <label style="display:inline-block" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)">Change Password!</label>
-     	    </form>
+      <div class="col-12 alt-color" id="radio-select">
+      <p> Please select:</p>
+    		 <label style="display:inline" ><input value="1" type="radio" name="formselector" onclick="displayForm(this)">Sign Up!</label>
+    		    <label style="display:inline" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)">Sign In!</label>
+            <label style="display:inline" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)">Change Password!</label>
         </div>
-    <div class="col-6 box">
-
-      <form id="sign-up"  class="border" style="visibility:hidden">
+    <div class="col-4 box">
+      <form id="sign-up"  class="sign-form" >
           <fieldset>
             <legend> Sign up! </legend>
             <input type="text" name="credentials[email]" placeholder= "user@email.com">
@@ -69,7 +63,7 @@
             <p id="message"></p>
           </fieldset>
     </form>
-    <form id="sign-in"  class="border" style="visibility:hidden">
+    <form id="sign-in" class="sign-form">
       <fieldset>
         <legend> Sign In! </legend>
         <input type="text" name="credentials[email]" placeholder= "user@email.com">
@@ -81,7 +75,7 @@
         <input type="submit" value="Sign In!">
       </fieldset>
 </form>
-<form id="change-password"  class="border">
+<form id="change-password" class="sign-form">
       <fieldset>
        <legend> Change Password! </legend>
       <input type="password" name="passwords[old]" placeholder="Password">
@@ -90,7 +84,7 @@
       </fieldset>
       </form>
       </div>
-      <div class="col-6 box column-color">. col-2 </div>
+      <div class="col-8 box column-color">. col-2 </div>
     </div>
 
   </body>

@@ -7,15 +7,24 @@ $black: #000;
 body {
   background-color: $body-bg-color;
 }
-
-.box {
-
-  background-color: $secondary;
-  border: 1px solid $white;
-  color: $font-color;
-  display: flex;
+#radio-select {
   height: 80px;
+  background-color: green;
+}
+.sign-form{
   justify-content: center;
+  padding: 10px;
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  visibility: hidden
+}
+.box {
+  background-color: white;
+  border: 1px solid $white;
+  display: flex;
+  position:relative;
+  height: 700px;
   padding: 10px 50px 20px;
 }
 
