@@ -23,7 +23,7 @@ body {
 }
 .sign-form{
   justify-content: center;
-  padding: 10px;
+  padding: 10px 30px 50px;
   position:absolute;
   top: 0px;
   left: 0px;
@@ -34,6 +34,8 @@ body {
     width: 300px;
     height: 300px;
     grid-template-columns: auto auto auto;
+    position: center;
+    padding: 50px 30px 20px;
 }
 #c00,
 #c01,
@@ -65,7 +67,7 @@ body {
   font-size: 3rem;
   font-weight: bold;
   border: 3px solid black;
-  transition: background 0.2s ease-in-out;
+
 }
 
 .success {

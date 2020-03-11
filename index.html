@@ -10,33 +10,13 @@
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-  <script type="text/javascript">
-  function displayForm(c){
-    if(c.value == "1"){
 
-      document.getElementById("sign-up").style.visibility='visible';
-      document.getElementById("sign-in").style.visibility='hidden';
-      document.getElementById("change-password").style.visibility='hidden';
-    }
-    else if(c.value =="2"){
-      document.getElementById("sign-in").style.visibility='visible';
-      document.getElementById("sign-up").style.visibility='hidden';
-      document.getElementById("change-password").style.visibility='hidden';
-
-    }
-    else if(c.value =="3"){
-      document.getElementById("change-password").style.visibility='visible';
-      document.getElementById("sign-in").style.visibility='hidden';
-      document.getElementById("sign-up").style.visibility='hidden';
-
-    }
-    else {}
-  }
-  </script>
 
 
 </head>
 <body>
+  <script src="./assets/scripts/js/scripts.js"> </script>
+  <script src="./assets/scripts/js/play.js"> </script>
   <div class="container">
     <h1>Tic-Tac-Toe </h1>
     <div class="row">
@@ -47,7 +27,7 @@
         <label style="display:inline" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)">Change Password!</label>
       </div>
       <div class="col-4 box">
-        <form id="sign-up"  class="sign-form" >
+        <form id="sign-up"  class="sign-form"  style="visibility:visible">
           <fieldset>
             <legend> Sign up! </legend>
             <input type="text" name="credentials[email]" placeholder= "user@email.com">
@@ -91,19 +71,21 @@
         </form>
       </div>
       <div class="col-8 box column-color">
-        <h1> Let's Play! </h1>
+        <!-- <h1> Let's Play! </h1> -->
 
         <div class="dash-board">
-        <div id="c00" class="block"></div>
-        <div id="c01" class="block"></div>
-        <div id="c02" class="block"></div>
-        <div id="c03" class="block"></div>
-        <div id="c04" class="block"></div>
-        <div id="c05" class="block"></div>
-        <div id="c06" class="block"></div>
-        <div id="c07" class="block"></div>
-        <div id="c08" class="block"></div>
+        <div id="c00" class="block" onclick="playedDiv('0')"></div>
+        <div id="c01" class="block" onclick="playedDiv('1')"></div>
+        <div id="c02" class="block" onclick="playedDiv('2')"></div>
+        <div id="c03" class="block" onclick="playedDiv('3')"></div>
+        <div id="c04" class="block" onclick="playedDiv('4')"></div>
+        <div id="c05" class="block" onclick="playedDiv('5')"></div>
+        <div id="c06" class="block" onclick="playedDiv('6')"></div>
+        <div id="c07" class="block" onclick="playedDiv('7')"></div>
+        <div id="c08" class="block" onclick="playedDiv('8')"></div>
 
+</div>
+</div>
 </div>
 </div>
 
