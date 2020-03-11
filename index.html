@@ -1,17 +1,97 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <title>Tic-Tac-Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
-</html>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <script type="text/javascript">
+  function displayForm(c){
+  if(c.value == "1"){
+
+   document.getElementById("sign-up").style.visibility='visible';
+   document.getElementById("sign-in").style.visibility='hidden';
+   document.getElementById("change-password").style.visibility='hidden';
+          }
+          else if(c.value =="2"){
+              document.getElementById("sign-in").style.visibility='visible';
+              document.getElementById("sign-up").style.visibility='hidden';
+              document.getElementById("change-password").style.visibility='hidden';
+
+          }
+          else if(c.value =="3"){
+              document.getElementById("change-password").style.visibility='visible';
+              document.getElementById("sign-in").style.visibility='hidden';
+              document.getElementById("sign-up").style.visibility='hidden';
+
+          }
+          else {}
+       }
+  </script>
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>Tic-Tac-Toe </h1>
+    <div class="row">
+      <div class="col-12 box alt-color">
+
+      <p> Please select:</p> <br>
+
+      <form>
+    		 <label style="display:inline-block" ><input value="1" type="radio" name="formselector" onclick="displayForm(this)">Sign Up!</label>
+    		    <br>
+    		    <label style="display:inline-block" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)">Sign In!</label>
+            <label style="display:inline-block" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)">Change Password!</label>
+     	    </form>
+        </div>
+    <div class="col-6 box">
+
+      <form id="sign-up"  class="border" style="visibility:hidden">
+          <fieldset>
+            <legend> Sign up! </legend>
+            <input type="text" name="credentials[email]" placeholder= "user@email.com">
+            <br/>
+            <br/>
+            <input type="password" name="credentials[password]" placeholder="chocolate">
+            <br/>
+            <br/>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <br/>
+            <br/>
+            <input type="submit" value="Sign up!">
+            <p id="message"></p>
+          </fieldset>
+    </form>
+    <form id="sign-in"  class="border" style="visibility:hidden">
+      <fieldset>
+        <legend> Sign In! </legend>
+        <input type="text" name="credentials[email]" placeholder= "user@email.com">
+        <br/>
+        <br/>
+        <input type="password" name="credentials[password]" placeholder="chocolate">
+        <br/>
+        <br/>
+        <input type="submit" value="Sign In!">
+      </fieldset>
+</form>
+<form id="change-password"  class="border">
+      <fieldset>
+       <legend> Change Password! </legend>
+      <input type="password" name="passwords[old]" placeholder="Password">
+      <input type="password" name="passwords[new]" placeholder="Password">
+      <input  type="submit" value="Change Password!">
+      </fieldset>
+      </form>
+      </div>
+      <div class="col-6 box column-color">. col-2 </div>
+    </div>
+
+  </body>
+  </html>

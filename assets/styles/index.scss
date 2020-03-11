@@ -1,1 +1,43 @@
 @import '~bootstrap/scss/bootstrap';
+$alt-color: $white;
+$body-bg-color: $gray-200;
+$font-color: $black;
+$column-color: #007bff8c;
+$black: #000;
+body {
+  background-color: $body-bg-color;
+}
+
+.box {
+
+  background-color: $secondary;
+  border: 1px solid $white;
+  color: $font-color;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  padding: 10px 50px 20px;
+}
+
+.alt-color {
+  background-color: $alt-color;
+}
+.column-color {
+  background-color: $column-color;
+}
+$success-background: #0f0;
+.border {
+  border: 3px solid $black;
+  margin: 20px;
+  padding: 20px;
+}
+
+.success {
+  color: $success-background;
+  background-color:  $black;
+}
+
+.failure {
+  color: #f00;
+  background-color: $black;
+}
