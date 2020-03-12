@@ -25,6 +25,7 @@
         <label style="display:inline" ><input value="1" type="radio" name="formselector" onclick="displayForm(this)">Sign Up!</label>
         <label style="display:inline" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)">Sign In!</label>
         <label style="display:inline" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)">Change Password!</label>
+        <button type="button" style="float:right" onClick="clearBoard()">Clear Board!</button>
       </div>
       <div class="col-4 box">
         <form id="sign-up"  class="sign-form"  style="visibility:visible">
@@ -85,6 +86,7 @@
         <div id="c08" class="block" onclick="playedDiv('8')"></div>
 
 </div>
+<p id="winner"></p>
 </div>
 </div>
 </div>
