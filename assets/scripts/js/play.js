@@ -12,7 +12,8 @@ const clearBoard = function () {
     document.getElementById('c0' + i).style.pointerEvents = 'auto'
   }
   dashBoard = ['', '', '', '', '', '', '', '', '']
-  document.getElementById('gameMessage').innerText = ''
+  document.getElementById('gameMessage').innerText = 'Player X turn'
+  play = true
 }
 
 const placeX = function (x) {
@@ -68,18 +69,20 @@ const playTheGame = function (play) {
 const touchedDiv = function (move) {
   if (dashBoard[move] === '') {
     if (play === true) {
-        document.getElementById('gameMessage').innerText = 'Player O turn'
+      document.getElementById('gameMessage').innerText = 'Player O turn'
       dashBoard[move] = playX
       play = !play
       placeX(move)
       playTheGame(playX)
       // look for all X in the array
     } else if (play === false) {
-        document.getElementById('gameMessage').innerText = 'Player X turn'
+      document.getElementById('gameMessage').innerText = 'Player X turn'
       dashBoard[move] = playO
       play = !play
       placeO(move)
       playTheGame(playO)
     }
+  } else {
+    document.getElementById('gameMessage').innerText = 'Invalid space'
   }
 }
