@@ -9,7 +9,6 @@ const playO = 'O'
 const clearBoard = function () {
   for (let i = 0; i <= 8; i++) {
     document.getElementById('c0' + i).innerHTML = ''
-    document.getElementById('c0' + i).style.pointerEvents = 'auto'
   }
   dashBoard = ['', '', '', '', '', '', '', '', '']
   document.getElementById('gameMessage').innerText = 'Player X turn'
@@ -18,6 +17,7 @@ const clearBoard = function () {
 
 const placeX = function (x) {
   const id = 'c0' + x
+  document.getElementById(id).style.pointerEvents = 'auto'
   document.getElementById(id).innerHTML += '<h1>X</h1>'
 }
 const placeO = function (O) {

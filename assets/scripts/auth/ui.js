@@ -55,6 +55,8 @@ const signOutSuccess = function (data) {
     document.getElementById('c0' + i).style.pointerEvents = 'none'
     document.getElementById('c0' + i).innerHTML = ''
     document.getElementById('gameMessage').innerText = 'Player X turn'
+    document.getElementById('sign-in').reset()
+
   }
 
   console.log('signOutSuccess data is:', data)
