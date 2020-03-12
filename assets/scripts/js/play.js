@@ -9,8 +9,10 @@ const playO = 'O'
 const clearBoard = function () {
   for (let i = 0; i <= 8; i++) {
     document.getElementById('c0' + i).innerHTML = ''
+    document.getElementById('c0' + i).style.pointerEvents = 'auto'
   }
   dashBoard = ['', '', '', '', '', '', '', '', '']
+  document.getElementById('winner').innerText = ''
 }
 
 const placeX = function (x) {
@@ -24,9 +26,18 @@ const placeO = function (O) {
   document.getElementById(id).innerHTML += '<h1>O</h1>'
 }
 
+const compareForWinner = function (arr) {
+// console.log(arr)
+  let match = false
+  for (let i = 0; i < winningPlays.length; i++) {
+    match = winningPlays[i].every(e => arr.includes(e))
+    if (match === true) { break }
+  }
+  return match
+}
 
 const checkMatch = function (play) {
-  const pushIndex = []
+  let pushIndex = []
   let arr
   // find all positions and add to the array
   for (let i = 0; i < dashBoard.length; i++) {
@@ -34,15 +45,16 @@ const checkMatch = function (play) {
       pushIndex.push(i)
       // check for winner, compare all the positions to the winnning array if true
       // then we found a winner
-      arr = winningPlays.some(a => pushIndex.length === a.length && a.every((v, i) => v === pushIndex[i]))
+      arr = compareForWinner(pushIndex)
     }
     //  return indexes;
   }
+  console.log(arr)
   return arr
 }
-const checkWin = function (play) {
+const playTheGame = function (play) {
   const win = checkMatch(play)
-  console.log(win)
+  //console.log(win)
   if (win === true) {
     document.getElementById('winner').innerText = 'Winner is ' + play
     boardFull = true
@@ -50,6 +62,11 @@ const checkWin = function (play) {
     for (let i = 0; i <= 8; i++) {
       document.getElementById('c0' + i).style.pointerEvents = 'none'
     }
+    //LOOK FOR DRAW
+  } else if ((dashBoard.every(x => x === 'X' || x === 'O')) === true) {
+    boardFull = true
+    console.log(boardFull)
+    document.getElementById('winner').innerText = 'DRAW!!!!!'
   }
 }
 
@@ -59,15 +76,15 @@ const playedDiv = function (move) {
       dashBoard[move] = playX
       play = !play
       placeX(move)
-      checkWin(playX)
+      playTheGame(playX)
       // look for all X in the array
-      console.log(dashBoard)
+      //console.log(dashBoard)
     } else if (play === false) {
       dashBoard[move] = playO
       play = !play
       placeO(move)
-      checkWin(playO)
-      console.log(dashBoard)
+      playTheGame(playO)
+      //console.log(dashBoard)
     }
   }
   // DISABLE DIV TELL USER THAT YOU ALREADY PLAYED THAT
