@@ -12,22 +12,19 @@ const clearBoard = function () {
     document.getElementById('c0' + i).style.pointerEvents = 'auto'
   }
   dashBoard = ['', '', '', '', '', '', '', '', '']
-  document.getElementById('winner').innerText = ''
+  document.getElementById('gameMessage').innerText = ''
 }
 
 const placeX = function (x) {
   const id = 'c0' + x
-  console.log(id)
   document.getElementById(id).innerHTML += '<h1>X</h1>'
 }
 const placeO = function (O) {
   const id = 'c0' + O
-  console.log(id)
   document.getElementById(id).innerHTML += '<h1>O</h1>'
 }
 
 const compareForWinner = function (arr) {
-// console.log(arr)
   let match = false
   for (let i = 0; i < winningPlays.length; i++) {
     match = winningPlays[i].every(e => arr.includes(e))
@@ -43,49 +40,46 @@ const checkMatch = function (play) {
   for (let i = 0; i < dashBoard.length; i++) {
     if (dashBoard[i] === play) {
       pushIndex.push(i)
-      // check for winner, compare all the positions to the winnning array if true
-      // then we found a winner
+      // check for gameMessage, compare all the positions to the winnning array if true
+      // then we found a gameMessage
       arr = compareForWinner(pushIndex)
     }
     //  return indexes;
   }
-  console.log(arr)
+
   return arr
 }
+
 const playTheGame = function (play) {
   const win = checkMatch(play)
-  //console.log(win)
   if (win === true) {
-    document.getElementById('winner').innerText = 'Winner is ' + play
+    document.getElementById('gameMessage').innerText = 'Winner is ' + play
     boardFull = true
     // diables clicking event for all divs
     for (let i = 0; i <= 8; i++) {
       document.getElementById('c0' + i).style.pointerEvents = 'none'
-    }
-    //LOOK FOR DRAW
+    } // Looked for draw
   } else if ((dashBoard.every(x => x === 'X' || x === 'O')) === true) {
     boardFull = true
-    console.log(boardFull)
-    document.getElementById('winner').innerText = 'DRAW!!!!!'
+    document.getElementById('gameMessage').innerText = 'DRAW!'
   }
 }
 
-const playedDiv = function (move) {
+const touchedDiv = function (move) {
   if (dashBoard[move] === '') {
     if (play === true) {
+        document.getElementById('gameMessage').innerText = 'Player O turn'
       dashBoard[move] = playX
       play = !play
       placeX(move)
       playTheGame(playX)
       // look for all X in the array
-      //console.log(dashBoard)
     } else if (play === false) {
+        document.getElementById('gameMessage').innerText = 'Player X turn'
       dashBoard[move] = playO
       play = !play
       placeO(move)
       playTheGame(playO)
-      //console.log(dashBoard)
     }
   }
-  // DISABLE DIV TELL USER THAT YOU ALREADY PLAYED THAT
 }
