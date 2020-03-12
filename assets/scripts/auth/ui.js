@@ -6,7 +6,6 @@ const signUpSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('signUpSuccess data is:', data)
-
 }
 
 const signUpFailure = function (error) {
@@ -52,6 +51,7 @@ const signOutSuccess = function (data) {
   $('#message1').addClass('success')
   document.getElementById('passw').style.display = 'none'
   document.getElementById('sign-out').style.display = 'none'
+  document.getElementById('clearBoard').style.display = 'none'
   for (let i = 0; i <= 8; i++) {
     document.getElementById('c0' + i).style.pointerEvents = 'none'
     document.getElementById('c0' + i).innerHTML = ''
