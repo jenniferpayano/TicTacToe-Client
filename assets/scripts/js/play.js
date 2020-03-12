@@ -22,6 +22,7 @@ const placeX = function (x) {
 }
 const placeO = function (O) {
   const id = 'c0' + O
+  document.getElementById(id).style.pointerEvents = 'auto'
   document.getElementById(id).innerHTML += '<h1>O</h1>'
 }
 
