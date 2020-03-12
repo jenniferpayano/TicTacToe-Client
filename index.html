@@ -22,9 +22,10 @@
     <div class="row">
       <div class="col-12 alt-color" id="radio-select">
         <p> Please select:</p>
-        <label style="display:inline" ><input value="1" type="radio" name="formselector" onclick="displayForm(this)">Sign Up!</label>
-        <label style="display:inline" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)">Sign In!</label>
-        <label style="display:inline" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)">Change Password!</label>
+        <label style="display:inline" ><input value="1" type="radio" name="formselector" onclick="displayForm(this)"> Sign Up!</label>
+        <label style="display:inline" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)"> Sign In!</label>
+        <label style="display:none" id="passw" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)"> Change Password!</label>
+        <form id= "sign-out" style="display:none"><input type="submit" value= "sign out"></form>
         <button type="button" style="float:right" onClick="clearBoard()">Clear Board!</button>
       </div>
       <div class="col-4 box">
@@ -75,15 +76,15 @@
         <!-- <h1> Let's Play! </h1> -->
 
         <div class="dash-board">
-        <div id="c00" class="block" onclick="touchedDiv('0')"></div>
-        <div id="c01" class="block" onclick="touchedDiv('1')"></div>
-        <div id="c02" class="block" onclick="touchedDiv('2')"></div>
-        <div id="c03" class="block" onclick="touchedDiv('3')"></div>
-        <div id="c04" class="block" onclick="touchedDiv('4')"></div>
-        <div id="c05" class="block" onclick="touchedDiv('5')"></div>
-        <div id="c06" class="block" onclick="touchedDiv('6')"></div>
-        <div id="c07" class="block" onclick="touchedDiv('7')"></div>
-        <div id="c08" class="block" onclick="touchedDiv('8')"></div>
+        <div id="c00" class="block" onclick="touchedDiv('0')" ></div>
+        <div id="c01" class="block" onclick="touchedDiv('1')" ></div>
+        <div id="c02" class="block" onclick="touchedDiv('2')" ></div>
+        <div id="c03" class="block" onclick="touchedDiv('3')" ></div>
+        <div id="c04" class="block" onclick="touchedDiv('4')" ></div>
+        <div id="c05" class="block" onclick="touchedDiv('5')" ></div>
+        <div id="c06" class="block" onclick="touchedDiv('6')" ></div>
+        <div id="c07" class="block" onclick="touchedDiv('7')" ></div>
+        <div id="c08" class="block" onclick="touchedDiv('8')" ></div>
 
 </div>
 <p id="gameMessage">Player X turn</p>

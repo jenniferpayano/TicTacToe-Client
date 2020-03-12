@@ -41,22 +41,29 @@ body {
 #c01,
 #c02 {
   border-top: none;
+  pointer-events: none;
 }
 #c00,
 #c03,
 #c06, {
   border-left: none;
+  pointer-events: none;
 }
 #c06,
 #c07,
 #c08{
   border-bottom: none;
+  pointer-events: none;
 }
 
 #c02,
 #c05,
 #c08 {
   border-right: none;
+  pointer-events: none;
+}
+#c04{
+  pointer-events: none;
 }
 .block {
   display: flex;

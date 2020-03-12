@@ -83,6 +83,7 @@ const touchedDiv = function (move) {
       playTheGame(playO)
     }
   } else {
+    // for when the div already has an X or an O
     document.getElementById('gameMessage').innerText = 'Invalid space'
   }
 }

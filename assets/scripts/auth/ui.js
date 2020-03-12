@@ -6,6 +6,7 @@ const signUpSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('signUpSuccess data is:', data)
+
 }
 
 const signUpFailure = function (error) {
@@ -19,6 +20,11 @@ const signInSuccess = function (data) {
   $('#message1').removeClass()
   $('#message1').addClass('success')
   console.log('signInSuccess data is:', data)
+  document.getElementById('passw').style.display = 'inline'
+  document.getElementById('sign-out').style.display = 'inline'
+  for (let i = 0; i <= 8; i++) {
+    document.getElementById('c0' + i).style.pointerEvents = 'auto'
+  }
   store.user = data.user
 }
 const signInFailure = function (error) {
@@ -40,15 +46,23 @@ const changePasswordFailure = function (error) {
 }
 
 const signOutSuccess = function (data) {
-  $('#message').text('Signed out Successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message1').text('Signed out Successfully')
+  $('#message1').removeClass()
+  $('#message1').addClass('success')
+  document.getElementById('passw').style.display = 'none'
+  document.getElementById('sign-out').style.display = 'none'
+  for (let i = 0; i <= 8; i++) {
+    document.getElementById('c0' + i).style.pointerEvents = 'none'
+    document.getElementById('c0' + i).innerHTML = ''
+    document.getElementById('gameMessage').innerText = 'Player X turn'
+  }
+
   console.log('signOutSuccess data is:', data)
 }
 const signOutFailure = function (error) {
-  $('#message').text('Error on sign out')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message1').text('Error on sign out')
+  $('#message1').removeClass()
+  $('#message1').addClass('failure')
   console.log('signOutFailure data is:', error)
 }
 module.exports = {
