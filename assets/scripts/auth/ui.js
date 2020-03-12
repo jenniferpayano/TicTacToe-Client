@@ -52,6 +52,8 @@ const signOutSuccess = function (data) {
   document.getElementById('passw').style.display = 'none'
   document.getElementById('sign-out').style.display = 'none'
   document.getElementById('clearBoard').style.display = 'none'
+  document.getElementById('sign-in').style.visibility = 'visible'
+  document.getElementById('change-password').style.visibility = 'hidden'
   for (let i = 0; i <= 8; i++) {
     document.getElementById('c0' + i).style.pointerEvents = 'none'
     document.getElementById('c0' + i).innerHTML = ''
