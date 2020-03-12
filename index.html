@@ -26,10 +26,10 @@
         <label style="display:inline" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)"> Sign In!</label>
         <label style="display:none" id="passw" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)"> Change Password!</label>
         <form id= "sign-out" style="display:none"><input type="submit" value= "sign out"></form>
-        <button type="button" style="float:right" onClick="clearBoard()">Clear Board!</button>
+        <button type="button" id="clearBoard" style="display:none; float:right" onClick="clearBoard()">Clear Board!</button>
       </div>
       <div class="col-4 box">
-        <form id="sign-up"  class="sign-form"  style="visibility:visible">
+        <form id="sign-up" class="sign-form"  style="visibility:visible">
           <fieldset>
             <legend> Sign up! </legend>
             <input type="text" name="credentials[email]" placeholder= "user@email.com">

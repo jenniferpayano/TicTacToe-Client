@@ -50,9 +50,22 @@ const signOut = function (data) {
     // data: data
   })
 }
+
+// const create = function (data) {
+//   event.preventDefault()
+//   console.log('In api.js')
+//   return $.ajax({
+//     url: config.apiUrl + '/games',
+//     method: 'POST',
+//     data
+//     // data: data
+//   })
+// }
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut//,
+  //create
 }

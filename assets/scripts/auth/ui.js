@@ -22,6 +22,7 @@ const signInSuccess = function (data) {
   console.log('signInSuccess data is:', data)
   document.getElementById('passw').style.display = 'inline'
   document.getElementById('sign-out').style.display = 'inline'
+  document.getElementById('clearBoard').style.display = 'inline'
   for (let i = 0; i <= 8; i++) {
     document.getElementById('c0' + i).style.pointerEvents = 'auto'
   }

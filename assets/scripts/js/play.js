@@ -1,3 +1,5 @@
+//const api = require('../auth/api')
+
 const winningPlays = [[0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [6, 4, 2]]
 let dashBoard = ['', '', '', '', '', '', '', '', '']
 let boardFull = false
@@ -8,9 +10,11 @@ const playO = 'O'
 
 const clearBoard = function () {
   for (let i = 0; i <= 8; i++) {
+    document.getElementById('c0' + i).style.pointerEvents = 'auto'
     document.getElementById('c0' + i).innerHTML = ''
   }
   dashBoard = ['', '', '', '', '', '', '', '', '']
+  //api.create()
   document.getElementById('gameMessage').innerText = 'Player X turn'
   play = true
 }

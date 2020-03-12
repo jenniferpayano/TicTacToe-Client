@@ -36,9 +36,17 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
+const onCreate = function (event) {
+  event.preventDefault()
+  console.log('Signing Up!')
+  api.create('{}')
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreate
 }
