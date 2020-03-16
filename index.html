@@ -26,7 +26,7 @@
         <label style="display:inline" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)"> Sign In!</label>
         <label style="display:none" id="passw" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)"> Change Password!</label>
         <form id= "sign-out" style="display:none"><input type="submit" value= "sign out"></form>
-        <button type="button" id="clearBoard" style="display:none; float:right" onClick="clearBoard()">New Game!</button>
+        <form id= "new-game" style="display:none; float:right"><input type="submit" value= "New Game"></form>
       </div>
       <div class="col-4 box">
         <form id="sign-up" class="sign-form"  style="visibility:visible">
@@ -74,20 +74,19 @@
       </div>
       <div class="col-8 box column-color">
         <!-- <h1> Let's Play! </h1> -->
-
-        <div class="dash-board">
-        <div id="c00" class="block" onclick="touchedDiv('0')" ></div>
-        <div id="c01" class="block" onclick="touchedDiv('1')" ></div>
-        <div id="c02" class="block" onclick="touchedDiv('2')" ></div>
-        <div id="c03" class="block" onclick="touchedDiv('3')" ></div>
-        <div id="c04" class="block" onclick="touchedDiv('4')" ></div>
-        <div id="c05" class="block" onclick="touchedDiv('5')" ></div>
-        <div id="c06" class="block" onclick="touchedDiv('6')" ></div>
-        <div id="c07" class="block" onclick="touchedDiv('7')" ></div>
-        <div id="c08" class="block" onclick="touchedDiv('8')" ></div>
+        <div class="dash-board" id="dashboard">
+        <button id= '0' type = "button"> </button>
+        <button id= '1' type = "button"> </button>
+        <button id= '2' type = "button"> </button>
+        <button id= '3' type = "button"> </button>
+        <button id= '4' type = "button"> </button>
+        <button id= '5' type = "button"> </button>
+        <button id= '6' type = "button"> </button>
+        <button id= '7' type = "button"> </button>
+        <button id= '8' type = "button"> </button>
 
 </div>
-<p id="gameMessage">Player X turn</p>
+<p id="gameMessage" style="display:none" >Player X turn</p>
 </div>
 </div>
 </div>

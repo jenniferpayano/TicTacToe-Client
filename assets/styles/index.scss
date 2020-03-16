@@ -5,6 +5,7 @@ $font-color: $black;
 $column-color: rgb(105, 119, 127);
 $black: #000;
 $success-background: #0f0;
+
 body {
   background-color: rgb(96, 194, 244);
 }
@@ -12,7 +13,6 @@ body {
   height: 80px;
   background-color:  #b0eb00;
 }
-
 .box {
   background-color: #a6a6a6;
   border: 1px solid $white;
@@ -20,6 +20,13 @@ body {
   position:relative;
   height: 700px;
   padding: 10px 50px 20px;
+}
+.successful-loginbox {
+  background-color: #fff;
+     border: solid 2px #fff;
+     box-shadow:
+         inset 60px 0 120px #00cc00,  /* left magenta */
+         inset -60px 0 120px #0ff; /* right cyan */
 }
 .sign-form{
   justify-content: center;
@@ -36,34 +43,35 @@ body {
     grid-template-columns: auto auto auto;
     position: center;
     padding: 50px 30px 20px;
+    visibility: hidden;
 }
-#c00,
-#c01,
-#c02 {
+#0,
+#1,
+#2 {
   border-top: none;
-  pointer-events: none;
+  pointer-events: auto;
 }
-#c00,
-#c03,
-#c06, {
+#0,
+#3,
+#6, {
   border-left: none;
-  pointer-events: none;
+  pointer-events: auto;
 }
-#c06,
-#c07,
-#c08{
+#6,
+#7,
+#8{
   border-bottom: none;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
-#c02,
-#c05,
-#c08 {
+#2,
+#5,
+#8 {
   border-right: none;
-  pointer-events: none;
+  pointer-events: auto;
 }
-#c04{
-  pointer-events: none;
+#4{
+  pointer-events: auto;
 }
 .block {
   display: flex;

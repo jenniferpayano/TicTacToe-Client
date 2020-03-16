@@ -1,5 +1,5 @@
-//const api = require('../auth/api')
-
+'use strict'
+const store = ('../store')
 const winningPlays = [[0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [6, 4, 2]]
 let dashBoard = ['', '', '', '', '', '', '', '', '']
 let boardFull = false
@@ -8,16 +8,16 @@ let play = true
 const playX = 'X'
 const playO = 'O'
 
-const clearBoard = function () {
-  for (let i = 0; i <= 8; i++) {
-    document.getElementById('c0' + i).style.pointerEvents = 'auto'
-    document.getElementById('c0' + i).innerHTML = ''
-  }
-  dashBoard = ['', '', '', '', '', '', '', '', '']
-  //api.create()
-  document.getElementById('gameMessage').innerText = 'Player X turn'
-  play = true
-}
+// const clearBoard = function () {
+//   for (let i = 0; i <= 8; i++) {
+//     document.getElementById('c0' + i).style.pointerEvents = 'auto'
+//     document.getElementById('c0' + i).innerHTML = ''
+//   }
+//   dashBoard = ['', '', '', '', '', '', '', '', '']
+//   //api.create()
+//   document.getElementById('gameMessage').innerText = 'Player X turn'
+//   play = true
+// }
 
 const placeX = function (x) {
   const id = 'c0' + x
@@ -32,8 +32,8 @@ const placeO = function (O) {
 
 const compareForWinner = function (arr) {
   let match = false
-  for (let i = 0; i < winningPlays.length; i++) {
-    match = winningPlays[i].every(e => arr.includes(e))
+  for (let i = 0; i < store.winningPlays.length; i++) {
+    match = store.winningPlays[i].every(e => arr.includes(e))
     if (match === true) { break }
   }
   return match
@@ -43,8 +43,8 @@ const checkMatch = function (play) {
   let pushIndex = []
   let arr
   // find all positions and add to the array
-  for (let i = 0; i < dashBoard.length; i++) {
-    if (dashBoard[i] === play) {
+  for (let i = 0; i < store.dashBoard.length; i++) {
+    if (store.dashBoard[i] === play) {
       pushIndex.push(i)
       // check for gameMessage, compare all the positions to the winnning array if true
       // then we found a gameMessage
@@ -60,35 +60,38 @@ const playTheGame = function (play) {
   const win = checkMatch(play)
   if (win === true) {
     document.getElementById('gameMessage').innerText = 'Winner is ' + play
-    boardFull = true
+    store.boardFull = true
     // diables clicking event for all divs
     for (let i = 0; i <= 8; i++) {
       document.getElementById('c0' + i).style.pointerEvents = 'none'
     } // Looked for draw
-  } else if ((dashBoard.every(x => x === 'X' || x === 'O')) === true) {
-    boardFull = true
+  } else if ((store.dashBoard.every(x => x === 'X' || x === 'O')) === true) {
+    store.boardFull = true
     document.getElementById('gameMessage').innerText = 'DRAW!'
   }
 }
 
-const touchedDiv = function (move) {
-  if (dashBoard[move] === '') {
-    if (play === true) {
+const returnId = function (move) {
+  if (store.dashBoard[move] === '') {
+    if (store.play === true) {
       document.getElementById('gameMessage').innerText = 'Player O turn'
-      dashBoard[move] = playX
-      play = !play
+      store.dashBoard[move] = store.playX
+      store.play = !store.play
       placeX(move)
-      playTheGame(playX)
+      playTheGame(store.playX)
       // look for all X in the array
-    } else if (play === false) {
+    } else if (store.play === false) {
       document.getElementById('gameMessage').innerText = 'Player X turn'
-      dashBoard[move] = playO
-      play = !play
+      store.dashBoard[move] = store.playO
+      store.play = !store.play
       placeO(move)
-      playTheGame(playO)
+      playTheGame(store.playO)
     }
   } else {
     // for when the div already has an X or an O
     document.getElementById('gameMessage').innerText = 'Invalid space'
   }
 }
+//module.exports = {playTheGame, checkMatch, compareForWinner, placeO, placeX}
+
+//module.exports = {returnId}

@@ -21,16 +21,16 @@ const signInSuccess = function (data) {
   console.log('signInSuccess data is:', data)
   document.getElementById('passw').style.display = 'inline'
   document.getElementById('sign-out').style.display = 'inline'
-  document.getElementById('clearBoard').style.display = 'inline'
-  for (let i = 0; i <= 8; i++) {
-    document.getElementById('c0' + i).style.pointerEvents = 'auto'
-  }
+  document.getElementById('new-game').style.display = 'inline'
   store.user = data.user
 }
 const signInFailure = function (error) {
   $('#message1').text('Error on sign in')
   $('#message1').removeClass()
   $('#message1').addClass('failure')
+  document.getElementById('passw').style.display = 'none'
+  document.getElementById('sign-out').style.display = 'none'
+  document.getElementById('new-game').style.display = 'none'
   console.log('signInFailure data is:', error)
 }
 const changePasswordSuccess = function (data) {
@@ -54,13 +54,12 @@ const signOutSuccess = function (data) {
   document.getElementById('clearBoard').style.display = 'none'
   document.getElementById('sign-in').style.visibility = 'visible'
   document.getElementById('change-password').style.visibility = 'hidden'
+  document.getElementById('dash-board').style.display = 'none'
   for (let i = 0; i <= 8; i++) {
-    document.getElementById('c0' + i).style.pointerEvents = 'none'
     document.getElementById('c0' + i).innerHTML = ''
     document.getElementById('gameMessage').innerText = 'Player X turn'
     document.getElementById('sign-in').reset()
-
-  }
+}
 
   console.log('signOutSuccess data is:', data)
 }
