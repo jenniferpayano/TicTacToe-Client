@@ -56,7 +56,7 @@ const playTheGame = function (play) {
     store.boardFull = true
     // diables clicking event for all divs
     for (let i = 0; i <= 8; i++) {
-      document.getElementById('c0' + i).style.pointerEvents = 'none'
+      document.getElementById(i).style.pointerEvents = 'none'
     } // Looked for draw
   } else if ((store.dashBoard.every(x => x === 'X' || x === 'O')) === true) {
     store.boardFull = true
