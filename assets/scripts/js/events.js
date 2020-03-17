@@ -108,7 +108,6 @@ const onStat = function (event) {
     .catch(ui.statFailure)
 }
 
-
 module.exports = {
   onNewGame,
   onNewMove,
