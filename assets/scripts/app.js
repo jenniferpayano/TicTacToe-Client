@@ -4,6 +4,7 @@
 // const example = require('./example')
 const authEvents = require('./auth/events.js')
 const gameEvents = require('./js/events.js')
+const scripts = require('./js/scripts.js')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
@@ -17,4 +18,5 @@ $(() => {
   $('#new-game').on('submit', gameEvents.onNewGame)
   $('#dashboard').on('click', gameEvents.onNewMove)
   $('#game-stats').on('submit', gameEvents.onStat)
+  $('.selectable').on('click', scripts.displayForm)
 })

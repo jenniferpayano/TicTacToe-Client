@@ -15,16 +15,14 @@
 
 </head>
 <body>
-  <script src="./assets/scripts/js/scripts.js"> </script>
-  <script src="./assets/scripts/js/play.js"> </script>
   <div class="container">
     <h1>Tic-Tac-Toe </h1>
     <div class="row">
       <div class="col-12 alt-color" id="radio-select">
         <p> Please select:</p>
-        <label style="display:inline" ><input value="1" type="radio" name="formselector" onclick="displayForm(this)"> Sign Up!</label>
-        <label style="display:inline" ><input value="2" type="radio" name="formselector" onclick="displayForm(this)"> Sign In!</label>
-        <label style="display:none" id="passw" ><input value="3" type="radio" name="formselector" onclick="displayForm(this)"> Change Password!</label>
+        <label style="display:inline" ><input value="1" class="selectable" type="radio" name="formselector" > Sign Up!</label>
+        <label style="display:inline" ><input value="2" class="selectable" type="radio" name="formselector" > Sign In!</label>
+        <label style="display:none" id="passw" ><input value="3" class="selectable" type="radio" name="formselector" > Change Password!</label>
         <form id= "sign-out" style="display:none"><input type="submit" value= "sign out"></form>
         <form id= "game-stats" style="display:none"><input type="submit" value= "User Stats"></form>
         <form id= "new-game" style="display:none; float:right"><input type="submit" value= "New Game"></form>
