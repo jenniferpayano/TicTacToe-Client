@@ -58,7 +58,7 @@ const signOutSuccess = function (data) {
   document.getElementById('gameMessage').style.display = 'none'
   document.getElementById('new-game').style.display = 'none'
   document.getElementById('gameStats').style.display = 'none'
-
+  document.getElementById('game-stats').style.display = 'none'
   for (let i = 0; i <= 8; i++) {
     document.getElementById(i).innerHTML = ''
     document.getElementById('gameMessage').innerText = 'Player X turn'
