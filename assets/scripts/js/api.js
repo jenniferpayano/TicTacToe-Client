@@ -16,7 +16,8 @@ const createGame = function (data) {
   })
 }
 
-const newMove = function (id, letter, bool) {
+const newMove = function (index, letter, fullBoard) {
+  console.log(index, letter, fullBoard, config.apiUrl, store.user.token, store.game.id)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',
@@ -26,10 +27,10 @@ const newMove = function (id, letter, bool) {
     data: {
       'game': {
         'cell': {
-          'index': id,
+          'index': index,
           'value': letter
         },
-        'over': bool
+        'over': fullBoard
       }
     }
   })

@@ -5,7 +5,6 @@ const store = require('../store')
 const play = require('./play')
 
 // On CreateNewGame
-
 const onNewGame = function (event) {
   event.preventDefault()
   api.createGame()
@@ -54,7 +53,7 @@ const playTheGame = function (play) {
   if (win === true) {
     document.getElementById('gameMessage').innerText = 'Winner is ' + play
     store.boardFull = true
-    // diables clicking event for all divs
+    // disables clicking event for all divs
     for (let i = 0; i <= 8; i++) {
       document.getElementById(i).style.pointerEvents = 'none'
     } // Looked for draw
@@ -73,17 +72,6 @@ const onNewMove = function (event) {
   console.log(store.dashBoard[0])
   console.log(store.game)
   console.log(store.game.id)
-  // if (store.play === true) {
-  //   document.getElementById('c0' + move).innerHTML = store.playX
-  // }
-  // if (store.play === false) {
-  //   document.getElementById('c0' + move).innerHTML = store.playO
-  // }
-  // console.log(move)
-  // api.newMove(move, store.playX, store.boardFull)
-  //   .then(ui.createGameSuccesfull(move))
-  //   .catch(ui.createGameFailurefailure(move))
-
   // TESTTTT
   if (store.dashBoard[move] === '') {
     if (store.play === true) {
@@ -92,7 +80,7 @@ const onNewMove = function (event) {
       store.play = !store.play
       placeX(move)
       playTheGame(store.playX)
-      api.newMove(store.game.id, store.playX, store.boardFull)
+      api.newMove(move, store.playX, store.boardFull)
         .then(ui.newMoveSucessfull)
         .catch(ui.newMoveFailure)
       // look for all X in the array
@@ -102,7 +90,7 @@ const onNewMove = function (event) {
       store.play = !store.play
       placeO(move)
       playTheGame(store.playO)
-      api.newMove(store.game.id, store.playO, store.boardFull)
+      api.newMove(move, store.playO, store.boardFull)
         .then(ui.newMoveSucessfull)
         .catch(ui.newMoveFailure)
     }
