@@ -46,7 +46,6 @@ const Stat = function () {
   })
 }
 
-
 module.exports = {
   createGame,
   newMove,
