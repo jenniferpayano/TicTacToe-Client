@@ -22,6 +22,7 @@ const signInSuccess = function (data) {
   document.getElementById('passw').style.display = 'inline'
   document.getElementById('sign-out').style.display = 'inline'
   document.getElementById('new-game').style.display = 'inline'
+  document.getElementById('game-stats').style.display = 'inline'
   store.user = data.user
 }
 const signInFailure = function (error) {
@@ -56,6 +57,7 @@ const signOutSuccess = function (data) {
   document.getElementById('change-password').style.visibility = 'hidden'
   document.getElementById('gameMessage').style.display = 'none'
   document.getElementById('new-game').style.display = 'none'
+  document.getElementById('gameStats').style.display = 'none'
 
   for (let i = 0; i <= 8; i++) {
     document.getElementById(i).innerHTML = ''

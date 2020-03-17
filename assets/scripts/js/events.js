@@ -100,7 +100,17 @@ const onNewMove = function (event) {
   }
 }
 
+const onStat = function (event) {
+  console.log('in events')
+  event.preventDefault()
+  api.Stat()
+    .then(ui.statSuccesfull)
+    .catch(ui.statFailure)
+}
+
+
 module.exports = {
   onNewGame,
-  onNewMove
+  onNewMove,
+  onStat
 }

@@ -35,10 +35,22 @@ const newMove = function (index, letter, fullBoard) {
     }
   })
 }
+const Stat = function () {
+  console.log('in api')
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 
 module.exports = {
   createGame,
-  newMove
+  newMove,
+  Stat
 //   updateGame,
 //  statusOfGame
 }

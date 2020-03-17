@@ -20,7 +20,7 @@ const createGameSuccesfull = function (data, event) {
 }
 
 const createGameFailure = function () {
-  $('gameMessage').text('Unable to start a new game')
+document.getElementById('gameMessge').innerHTML = 'Unable to start a new game'
 }
 
 const newMoveSucessfull = function (data) {
@@ -29,14 +29,25 @@ const newMoveSucessfull = function (data) {
 }
 
 const newMoveFailure = function (data) {
-  $('gameMessage').text('Unable to make a new move')
+  document.getElementById('gameMessge').innerHTML = 'Unable to make a new move'
   console.log(store.game)
   console.log('unable to make a new move')
 }
+const statSuccesfull = function (data) {
+  document.getElementById('gameStats').style.display = 'inline'
+  document.getElementById('gameStats').innerHTML = 'Total Games: ' + data.games.length
+}
+const statFailure = function (data) {
+  document.getElementById('gameStats').style.display = 'inline'
+document.getElementById('gameStats').innerHTML = 'failure getting stats'
+}
+
 
 module.exports = {
   createGameSuccesfull,
   createGameFailure,
   newMoveSucessfull,
-  newMoveFailure
+  newMoveFailure,
+  statSuccesfull,
+  statFailure
 }

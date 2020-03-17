@@ -16,4 +16,5 @@ $(() => {
   // Game
   $('#new-game').on('submit', gameEvents.onNewGame)
   $('#dashboard').on('click', gameEvents.onNewMove)
+  $('#game-stats').on('submit', gameEvents.onStat)
 })
