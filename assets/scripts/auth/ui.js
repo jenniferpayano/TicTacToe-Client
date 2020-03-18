@@ -22,7 +22,7 @@ const signInSuccess = function (data) {
   $('#message').addClass('success')
   document.getElementById('sign-in').reset()
   console.log('signInSuccess data is:', data)
-  document.getElementById('passw').style.display = 'inline'
+  document.getElementById('passw').style.display = 'hidden'
   document.getElementById('sign-out').style.display = 'inline'
   document.getElementById('new-game').style.display = 'inline'
   document.getElementById('game-stats').style.display = 'inline'
