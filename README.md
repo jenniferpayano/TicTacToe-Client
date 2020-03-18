@@ -5,8 +5,8 @@ CONTENTS OF FILE
 
 * Description
 * Wireframe
-* User Stories
 * Planning and Development
+* User Stories
 * Unsolved Problems
 * Technology
 * Creator
