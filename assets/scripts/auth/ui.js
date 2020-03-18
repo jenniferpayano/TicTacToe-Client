@@ -43,11 +43,13 @@ const changePasswordSuccess = function () {
   $('#message').text('Password changed Successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  document.getElementById('change-password').reset()
 }
 const changePasswordFailure = function () {
   $('#message').text('Failed to change password')
   $('#message').removeClass()
   $('#message').addClass('failure')
+  document.getElementById('change-password').reset()
 }
 
 const signOutSuccess = function () {
