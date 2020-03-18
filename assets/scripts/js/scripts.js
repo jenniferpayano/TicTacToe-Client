@@ -1,5 +1,5 @@
 'use strict'
-
+// used to display form based on the radio button selection
 const displayForm = function (event) {
   if (event.target.value === '1') {
     document.getElementById('sign-up').style.visibility = 'visible'

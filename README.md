@@ -41,7 +41,7 @@ UNSOLVED PROBLEMS
 -----------------
 
 
-TECHNOLOGIES
+TECHNOLOGY
 ------------
 - HTML
 - CSS
