@@ -5,6 +5,7 @@ $font-color: $black;
 $column-color: rgb(105, 119, 127);
 $black: #000;
 $success-background: #0f0;
+$border-width: 7px solid black;
 
 body {
   background-color: rgb(96, 194, 244);
@@ -19,15 +20,15 @@ body {
   display: flex;
   position:relative;
   height: 700px;
-  padding: 10px 50px 20px;
+  padding: 10px 10px 20px;
 }
-.successful-loginbox {
-  background-color: #fff;
-     border: solid 2px #fff;
-     box-shadow:
-         inset 60px 0 120px #00cc00,  /* left magenta */
-         inset -60px 0 120px #0ff; /* right cyan */
-}
+// .successful-loginbox {
+//   background-color: #fff;
+//      border: solid 2px #fff;
+//      box-shadow:
+//          inset 60px 0 120px #fff,  /* left magenta */
+//          inset -60px 0 120px #0ff; /* right cyan */
+// }
 .sign-form{
   justify-content: center;
   padding: 10px 30px 50px;
@@ -36,55 +37,65 @@ body {
   left: 0px;
   visibility: hidden
 }
+#message {
+  margin: auto;
+}
+input[type="submit"]{
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+input[type="submit"] :hover {
+  background-color: #555555;
+  color: white;
+}
+nav {
+  display: inline-flex;
+  height: fit-content;
+  width: inherit;
+}
 .dash-board{
   display: grid;
-    width: 300px;
-    height: 300px;
     grid-template-columns: auto auto auto;
-    position: center;
-    padding: 50px 30px 20px;
     visibility: hidden;
 }
-#0,
-#1,
-#2 {
+[id="0"],[id="1"],[id="2"]{
   border-top: none;
   pointer-events: auto;
 }
-#0,
-#3,
-#6, {
+[id="0"],
+[id="3"],
+[id="6"], {
   border-left: none;
   pointer-events: auto;
+
 }
-#6,
-#7,
-#8{
+[id="6"],
+[id="7"],
+[id="8"]{
   border-bottom: none;
   pointer-events: auto;
+
 }
 
-#2,
-#5,
-#8 {
+[id="2"],
+[id="5"],
+[id="8"] {
   border-right: none;
   pointer-events: auto;
 }
-#4{
+[id="4"]{
+  border-style: ridge;
   pointer-events: auto;
+
 }
-.block {
-  display: flex;
+
+button {
   width: 100px;
-  height: 100px;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  font-weight: bold;
+  height: 133px;
   border: 3px solid black;
-
 }
-
 .success {
   color: $success-background;
 }
