@@ -40,14 +40,14 @@ const signInFailure = function () {
   document.getElementById('sign-in').reset()
 }
 const changePasswordSuccess = function () {
-  $('#message2').text('Password changed Successfully')
-  $('#message2').removeClass()
-  $('#message2').addClass('success')
+  $('#message').text('Password changed Successfully')
+  $('#message').removeClass()
+  $('#message').addClass('success')
 }
 const changePasswordFailure = function () {
-  $('#message2').text('Failed to change password')
-  $('#message2').removeClass()
-  $('#message2').addClass('failure')
+  $('#message').text('Failed to change password')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
 }
 
 const signOutSuccess = function () {
