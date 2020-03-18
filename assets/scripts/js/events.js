@@ -2,7 +2,6 @@
 const ui = require('./ui')
 const api = require('./api')
 const store = require('../store')
-const play = require('./play')
 
 // On CreateNewGame
 const onNewGame = function (event) {
@@ -13,13 +12,11 @@ const onNewGame = function (event) {
 }
 // PLAY THE GAME
 const placeX = function (x) {
-  console.log('here')
   document.getElementById(x).innerHTML += '<h1>X</h1>'
 }
 const placeO = function (x) {
   document.getElementById(x).style.pointerEvents = 'auto'
   document.getElementById(x).innerHTML += '<h1>O</h1>'
-  console.log('place? 0')
 }
 
 const compareForWinner = function (arr) {
@@ -32,7 +29,7 @@ const compareForWinner = function (arr) {
 }
 
 const checkMatch = function (play) {
-  let pushIndex = []
+  const pushIndex = []
   let arr
   // find all positions and add to the array
   for (let i = 0; i < store.dashBoard.length; i++) {
@@ -66,13 +63,6 @@ const playTheGame = function (play) {
 const onNewMove = function (event) {
   event.preventDefault()
   const move = event.target.id
-  console.log(move)
-  console.log(store.dashBoard)
-  console.log(store.play)
-  console.log(store.dashBoard[0])
-  console.log(store.game)
-  console.log(store.game.id)
-  // TESTTTT
   if (store.dashBoard[move] === '') {
     if (store.play === true) {
       document.getElementById('gameMessage').innerText = 'Player O turn'
@@ -101,7 +91,6 @@ const onNewMove = function (event) {
 }
 
 const onStat = function (event) {
-  console.log('in events')
   event.preventDefault()
   api.Stat()
     .then(ui.statSuccesfull)

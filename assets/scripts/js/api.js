@@ -4,7 +4,6 @@ const store = require('../store')
 
 const createGame = function (data) {
   event.preventDefault()
-  console.log('In api.js')
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -17,7 +16,6 @@ const createGame = function (data) {
 }
 
 const newMove = function (index, letter, fullBoard) {
-  console.log(index, letter, fullBoard, config.apiUrl, store.user.token, store.game.id)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',
@@ -36,7 +34,6 @@ const newMove = function (index, letter, fullBoard) {
   })
 }
 const Stat = function () {
-  console.log('in api')
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',

@@ -16,7 +16,6 @@ const createGameSuccesfull = function (data, event) {
   $('gameMessage').text('Player X turn')
   store.game = data.game
   store.dashBoard = ['', '', '', '', '', '', '', '', '']
-  console.log(store.game)
 }
 
 const createGameFailure = function () {
@@ -25,20 +24,16 @@ const createGameFailure = function () {
 
 const newMoveSucessfull = function (data) {
   store.game = data.game
-  console.log(store.game)
 }
 
 const newMoveFailure = function (data) {
   document.getElementById('gameMessge').innerHTML = 'Unable to make a new move'
-  console.log(store.game)
-  console.log('unable to make a new move')
 }
 const statSuccesfull = function (data) {
   document.getElementById('gameStats').style.display = 'inline'
   document.getElementById('gameStats').innerHTML = 'Total Games: ' + data.games.length
 }
 const statFailure = function (data) {
-
   document.getElementById('gameStats').style.display = 'inline'
   document.getElementById('gameStats').innerHTML = 'failure getting stats'
 }
