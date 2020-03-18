@@ -18,7 +18,7 @@ This is an Tic-Tac-Toe application written in HTML, CSS, JavaScript, and Jquery 
 
 WIREFRAME
 ---------
-
+[https://imgur.com/VLwnnh7]
 
 
 PLANNING AND DEVELOPMENT
