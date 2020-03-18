@@ -39,7 +39,8 @@ USER STORIES
 
 UNSOLVED PROBLEMS
 -----------------
-
+- hover over the button and have it change color before being played
+- sign up should already be selected when it loads, since its default it should be selected in the radio button first
 
 TECHNOLOGY
 ------------

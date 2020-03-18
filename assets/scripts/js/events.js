@@ -11,6 +11,7 @@ const onNewGame = function (event) {
     .catch(ui.createGameFailure)
 }
 // PLAY THE GAME
+
 // Places the X on the board
 const placeX = function (x) {
   document.getElementById(x).innerHTML += '<h1>X</h1>'

@@ -18,5 +18,6 @@ $(() => {
   $('#new-game').on('submit', gameEvents.onNewGame)
   $('#dashboard').on('click', gameEvents.onNewMove)
   $('#game-stats').on('submit', gameEvents.onStat)
+  // for displaying Form
   $('.selectable').on('click', scripts.displayForm)
 })
