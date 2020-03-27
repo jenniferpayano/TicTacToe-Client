@@ -1,41 +1,71 @@
 @import '~bootstrap/scss/bootstrap';
-$alt-color: $white;
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2|Liu+Jian+Mao+Cao&display=swap');
+
+$alt-color: $orange;
 $body-bg-color: $gray-200;
 $font-color: $black;
 $column-color: rgb(105, 119, 127);
 $black: #000;
 $success-background: #0f0;
 $border-width: 7px solid black;
+$font: 'Liu Jian Mao Cao', cursive;
+$font-form: 'Baloo Thambi 2', cursive;
 
 body {
-  background-color: rgb(96, 194, 244);
+  background-color: rgba(96, 194, 244, 0.3);
+
 }
 #radio-select {
-  height: 80px;
-  background-color:  #b0eb00;
+  height: fit-content;
+  background-color:  #fddc78eb;
 }
+
 .box {
   background-color: #a6a6a6;
   border: 1px solid $white;
   display: flex;
   position:relative;
   height: 700px;
-  padding: 10px 10px 20px;
+  //padding: 10px 10px 20px;
 }
-// .successful-loginbox {
-//   background-color: #fff;
-//      border: solid 2px #fff;
-//      box-shadow:
-//          inset 60px 0 120px #fff,  /* left magenta */
-//          inset -60px 0 120px #0ff; /* right cyan */
-// }
+.title {
+  font-family: $font;
+  font-size: 50px;
+  overflow: hidden;
+
+}
+.title a {
+  float: left;
+  text-align: center;
+}
+.info {
+  float: right;
+  font-size: 24px;
+}
+.row {
+padding: 20px 50px 50px;
+}
+.form {
+  font-size: 24px;
+  font-family: $font-form;
+}
+label {
+  font-size: 18px;
+  font-family: $font-form;
+}
+
 .sign-form{
+  font-size: 24px;
+  font-family: $font-form;
   justify-content: center;
-  padding: 10px 30px 50px;
+  padding: 20px 30px 50px;
   position:absolute;
   top: 0px;
   left: 0px;
   visibility: hidden
+}
+.col-12 {
+  display: inline-table;
 }
 #message {
   margin: auto;
@@ -50,15 +80,51 @@ input[type="submit"] :hover {
   background-color: #555555;
   color: white;
 }
+
+input[type="radio"] {
+   top: 0;
+   left: 0;
+   height: 20px;
+   width: 20px;
+   background-color: #eee;
+   border-radius: 50%;
+}
 nav {
   display: inline-flex;
   height: fit-content;
   width: inherit;
 }
+#select-form-label {
+  float: left;
+}
+form {
+  font-size: 18px;
+  font-family: $font-form;
+  margin-top: 5px;
+}
+.top-left-nav {
+  display:none;
+   float:left;
+   margin-left: 10px
+}
+.top-right-nav{
+  display:none;
+  float:right;
+}
+#gameMessage {
+  display: inline-block;
+  font-size: 24px;
+  font-family: $font-form;
+}
+#gameStats {
+  font-size: 24px;
+  font-family: $font-form;
+}
 .dash-board{
   display: grid;
     grid-template-columns: auto auto auto;
     visibility: hidden;
+
 }
 [id="0"],[id="1"],[id="2"]{
   border-top: none;
@@ -71,14 +137,10 @@ nav {
   pointer-events: auto;
 
 }
-[id="6"],
-[id="7"],
-[id="8"]{
+[ id = '6' ], [ id = '7' ], [ id = '8' ]{
   border-bottom: none;
   pointer-events: auto;
-
 }
-
 [id="2"],
 [id="5"],
 [id="8"] {
@@ -90,7 +152,6 @@ nav {
   pointer-events: auto;
 
 }
-
 button {
   width: 100px;
   height: 133px;

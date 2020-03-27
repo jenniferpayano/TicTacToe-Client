@@ -3,6 +3,7 @@ const ui = require('./ui')
 const api = require('./api')
 const store = require('../store')
 
+
 // On CreateNewGame
 const onNewGame = function (event) {
   event.preventDefault()
@@ -59,6 +60,7 @@ const playTheGame = function (play) {
   if (win === true) {
     document.getElementById('gameMessage').innerText = 'Winner is ' + play
     store.boardFull = true
+    store.winner = play
     // disables clicking event for all divs
     for (let i = 0; i <= 8; i++) {
       document.getElementById(i).style.pointerEvents = 'none'
@@ -82,7 +84,7 @@ const onNewMove = function (event) {
       document.getElementById('gameMessage').innerText = 'Player O turn'
       // store the move in the dashBoard array
       store.dashBoard[move] = store.playX
-      // set the value of play to false
+      // set the value of play to false aka O
       store.play = !store.play
       // Play game will check whether there is a match
       playTheGame(store.playX)
@@ -94,18 +96,24 @@ const onNewMove = function (event) {
         .catch(ui.newMoveFailure)
       // and if the store play is false - false means that the play is O
     } else if (store.play === false) {
+      placeO(move)
       document.getElementById('gameMessage').innerText = 'Player X turn'
       store.dashBoard[move] = store.playO
       store.play = !store.play
-      placeO(move)
       playTheGame(store.playO)
       api.newMove(move, store.playO, store.boardFull)
         .then(ui.newMoveSucessfull)
         .catch(ui.newMoveFailure)
     }
   } else {
+    if (store.boardFull === true) {
     // for when the div already has an X or an O
-    document.getElementById('gameMessage').innerText = 'Invalid space'
+      document.getElementById('gameMessage').innerText = 'Invalid space, Winner is ' + store.winner
+    } else if (store.play === true) {
+      document.getElementById('gameMessage').innerText = 'Invalid space, Player X turn'
+    } else if (store.play === false) {
+      document.getElementById('gameMessage').innerText = 'Invalid space, Player O turn'
+    }
   }
 }
 // checks for how many plays the user has played

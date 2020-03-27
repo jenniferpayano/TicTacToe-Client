@@ -1,6 +1,6 @@
 Jennifer Payano Tic-Tac-Toe game
 
-CONTENTS OF FILE
+Tic-Tac-Toe
 ----------------
 
 * Description
