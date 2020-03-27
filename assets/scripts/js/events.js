@@ -82,7 +82,7 @@ const onNewMove = function (event) {
       document.getElementById('gameMessage').innerText = 'Player O turn'
       // store the move in the dashBoard array
       store.dashBoard[move] = store.playX
-      // set the value of play to false
+      // set the value of play to false aka O
       store.play = !store.play
       // Play game will check whether there is a match
       playTheGame(store.playX)
@@ -94,10 +94,10 @@ const onNewMove = function (event) {
         .catch(ui.newMoveFailure)
       // and if the store play is false - false means that the play is O
     } else if (store.play === false) {
+      placeO(move)
       document.getElementById('gameMessage').innerText = 'Player X turn'
       store.dashBoard[move] = store.playO
       store.play = !store.play
-      placeO(move)
       playTheGame(store.playO)
       api.newMove(move, store.playO, store.boardFull)
         .then(ui.newMoveSucessfull)

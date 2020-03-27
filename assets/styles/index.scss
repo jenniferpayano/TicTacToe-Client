@@ -1,4 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap');
+
 $alt-color: $white;
 $body-bg-color: $gray-200;
 $font-color: $black;
@@ -6,13 +8,15 @@ $column-color: rgb(105, 119, 127);
 $black: #000;
 $success-background: #0f0;
 $border-width: 7px solid black;
+$font: 'Liu Jian Mao Cao', cursive;
 
 body {
-  background-color: rgb(96, 194, 244);
+  background-color: rgba(96, 194, 244, 0.3);
+
 }
 #radio-select {
-  height: 80px;
-  background-color:  #b0eb00;
+  // height: 80px;
+  // background-color:  #b0eb00;
 }
 .box {
   background-color: #a6a6a6;
@@ -20,7 +24,24 @@ body {
   display: flex;
   position:relative;
   height: 700px;
-  padding: 10px 10px 20px;
+  //padding: 10px 10px 20px;
+}
+.title {
+  font-family: $font;
+  font-size: 50px;
+  overflow: hidden;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.title a {
+  float: left;
+  text-align: center;
+}
+.info {
+
+  float: right;
+  font-size: 24px;
+
 }
 // .successful-loginbox {
 //   background-color: #fff;
