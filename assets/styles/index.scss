@@ -1,7 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2|Liu+Jian+Mao+Cao&display=swap');
 
-$alt-color: $white;
+$alt-color: $orange;
 $body-bg-color: $gray-200;
 $font-color: $black;
 $column-color: rgb(105, 119, 127);
@@ -45,7 +45,7 @@ body {
 .row {
 padding: 20px 50px 50px;
 }
-#form {
+.form {
   font-size: 24px;
   font-family: $font-form;
 }
@@ -55,12 +55,17 @@ label {
 }
 
 .sign-form{
+  font-size: 24px;
+  font-family: $font-form;
   justify-content: center;
   padding: 20px 30px 50px;
   position:absolute;
   top: 0px;
   left: 0px;
   visibility: hidden
+}
+.col-12 {
+  display: inline-table;
 }
 #message {
   margin: auto;
@@ -89,10 +94,37 @@ nav {
   height: fit-content;
   width: inherit;
 }
+#select-form-label {
+  float: left;
+}
+form {
+  font-size: 18px;
+  font-family: $font-form;
+  margin-top: 5px;
+}
+.top-left-nav {
+  display:none;
+   float:left;
+   margin-left: 10px
+}
+.top-right-nav{
+  display:none;
+  float:right;
+}
+#gameMessage {
+  display: inline-block;
+  font-size: 24px;
+  font-family: $font-form;
+}
+#gameStats {
+  font-size: 24px;
+  font-family: $font-form;
+}
 .dash-board{
   display: grid;
     grid-template-columns: auto auto auto;
     visibility: hidden;
+
 }
 [id="0"],[id="1"],[id="2"]{
   border-top: none;
@@ -105,14 +137,10 @@ nav {
   pointer-events: auto;
 
 }
-[id="6"],
-[id="7"],
-[id="8"]{
+[ id = '6' ], [ id = '7' ], [ id = '8' ]{
   border-bottom: none;
   pointer-events: auto;
-
 }
-
 [id="2"],
 [id="5"],
 [id="8"] {
@@ -124,7 +152,6 @@ nav {
   pointer-events: auto;
 
 }
-
 button {
   width: 100px;
   height: 133px;

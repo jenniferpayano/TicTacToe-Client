@@ -28,6 +28,7 @@ const signInSuccess = function (data) {
   document.getElementById('sign-in').style.visibility = 'hidden'
   document.getElementById('sign-up').style.visibility = 'hidden'
   document.getElementById('change-password').style.visibility = 'visible'
+  document.getElementById('select-form-label').innerText = 'Select Action: '
   store.user = data.user
 }
 const signInFailure = function () {
@@ -67,6 +68,7 @@ const signOutSuccess = function () {
   document.getElementById('new-game').style.display = 'none'
   document.getElementById('gameStats').style.display = 'none'
   document.getElementById('game-stats').style.display = 'none'
+  document.getElementById('select-form-label').innerText = 'Select Form'
   for (let i = 0; i <= 8; i++) {
     document.getElementById(i).innerHTML = ''
     document.getElementById('gameMessage').innerText = 'Player X turn'
