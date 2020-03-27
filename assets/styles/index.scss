@@ -1,5 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2|Liu+Jian+Mao+Cao&display=swap');
 
 $alt-color: $white;
 $body-bg-color: $gray-200;
@@ -9,15 +9,17 @@ $black: #000;
 $success-background: #0f0;
 $border-width: 7px solid black;
 $font: 'Liu Jian Mao Cao', cursive;
+$font-form: 'Baloo Thambi 2', cursive;
 
 body {
   background-color: rgba(96, 194, 244, 0.3);
 
 }
 #radio-select {
-  // height: 80px;
-  // background-color:  #b0eb00;
+  height: fit-content;
+  background-color:  #fddc78eb;
 }
+
 .box {
   background-color: #a6a6a6;
   border: 1px solid $white;
@@ -30,29 +32,31 @@ body {
   font-family: $font;
   font-size: 50px;
   overflow: hidden;
-  padding-right: 50px;
-  padding-left: 50px;
+
 }
 .title a {
   float: left;
   text-align: center;
 }
 .info {
-
   float: right;
   font-size: 24px;
-
 }
-// .successful-loginbox {
-//   background-color: #fff;
-//      border: solid 2px #fff;
-//      box-shadow:
-//          inset 60px 0 120px #fff,  /* left magenta */
-//          inset -60px 0 120px #0ff; /* right cyan */
-// }
+.row {
+padding: 20px 50px 50px;
+}
+#form {
+  font-size: 24px;
+  font-family: $font-form;
+}
+label {
+  font-size: 18px;
+  font-family: $font-form;
+}
+
 .sign-form{
   justify-content: center;
-  padding: 10px 30px 50px;
+  padding: 20px 30px 50px;
   position:absolute;
   top: 0px;
   left: 0px;
@@ -70,6 +74,15 @@ input[type="submit"]{
 input[type="submit"] :hover {
   background-color: #555555;
   color: white;
+}
+
+input[type="radio"] {
+   top: 0;
+   left: 0;
+   height: 20px;
+   width: 20px;
+   background-color: #eee;
+   border-radius: 50%;
 }
 nav {
   display: inline-flex;

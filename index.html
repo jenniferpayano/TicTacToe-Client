@@ -13,6 +13,7 @@
 
 </head>
 <body>
+  <div class= "padding">
       <div class= "title">
         <nav class="navbar navbar-light bg-light">
       <a >Tic-Tac-Toe </a>
@@ -21,16 +22,67 @@
     </div>
   </nav>
     </div>
+    <div class = "row">
+      <div class="col-12 alt-color" id="radio-select">
+        <label id="form"> Select Form:  </label>
+        <label style="display:inline" id="signUp"><input value="1" class="selectable" type="radio" name="formselector" checked > Sign Up!</label>
+        <label style="display:inline" id="signIn"><input value="2" class="selectable" type="radio" name="formselector" > Sign In!</label>
+        <label style="display:none" id="passw" ><input value="3" class="selectable" type="radio" name="formselector" > Change Password!</label>
+        <form id= "sign-out" style="display:none"><input type="submit" value= "sign out"></form>
+        <form id= "new-game" style="display:none; float:right"><input type="submit" value= "New Game"></form>
+        <form id= "game-stats" style="display:none; float:right"><input type="submit" value= "User Stats"></form>
+            </div>
+  <div class="col-4 box">
+    <form id="sign-up" class="sign-form"  style="visibility:visible">
+      <fieldset>
+        <legend> Sign up! </legend>
+        <input type="text" name="credentials[email]" placeholder= "user@email.com">
+        <br/>
+        <br/>
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <br/>
+        <br/>
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        <br/>
+        <br/>
+        <input type="submit" value="Sign up!">
 
-    <!-- <div id="radio-select">
-      <label style="display:inline" id="signUp"><input value="1" class="selectable" type="radio" name="formselector" checked> Sign Up!</label>
-      <label style="display:inline" id="signIn"><input value="2" class="selectable" type="radio" name="formselector" > Sign In!</label>
-      <label style="display:none" id="passw" ><input value="3" class="selectable" type="radio" name="formselector" > Change Password!</label>
-      <form id= "sign-out" style="display:none"><input type="submit" value= "sign out"></form>
-      <form id= "new-game" style="display:none; float:right"><input type="submit" value= "New Game"></form>
-      <form id= "game-stats" style="display:none; float:right"><input type="submit" value= "User Stats"></form>
-    </div> -->
-</nav>
+      </fieldset>
+    </form>
+    <form id="sign-in" class="sign-form">
+      <fieldset>
+        <legend> Sign In! </legend>
+        <input type="text" name="credentials[email]" placeholder= "user@email.com">
+        <br/>
+        <br/>
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <br/>
+        <br/>
+        <input type="submit" value="Sign In!">
+
+      </fieldset>
+    </form>
+    <form id="change-password" class="sign-form">
+      <fieldset>
+        <legend> Change Password! </legend>
+        <input type="password" name="passwords[old]" placeholder="Old Password">
+        <br/>
+        <br/>
+        <input type="password" name="passwords[new]" placeholder="New Password">
+        <br/>
+        <br/>
+        <input  type="submit" value="Change Password!">
+
+      </fieldset>
+    </form>
+      <p id="message"></p>
+  </div>
+<div class="col-8 box column-color">
+
+    </div>
+  </div>
+
+</div>
 </div>
 </body>
   </html>
