@@ -14,13 +14,13 @@
 </head>
 <body>
   <div class= "padding">
-      <div class= "title">
-        <nav class="navbar navbar-light bg-light">
-      <a >Tic-Tac-Toe </a>
-    <div class="info">
-      <a > Jennifer Payano </a>
-    </div>
-  </nav>
+    <div class= "title">
+      <nav class="navbar navbar-light bg-light">
+        <a >Tic-Tac-Toe </a>
+        <div class="info">
+          <a > Jennifer Payano </a>
+        </div>
+      </nav>
     </div>
     <div class = "row">
       <div class="col-12 alt-color" id="radio-select">
@@ -32,83 +32,80 @@
         <form id= "sign-out" class= "top-left-nav"><input type="submit" value= "Sign out"></form>
         <form id= "new-game"  class= "top-right-nav"><input type="submit" value= "New Game"></form>
         <form id= "game-stats" class= "top-right-nav" ><input type="submit" value= "User Stats"></form>
+      </div>
+      <div class="col-4 box">
+        <form id="sign-up" class="sign-form"  style="visibility:visible">
+          <fieldset>
+            <legend> Sign up! </legend>
+            <input type="text" name="credentials[email]" placeholder= "user@email.com">
+            <br/>
+            <br/>
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <br/>
+            <br/>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <br/>
+            <br/>
+            <input type="submit" value="Sign up!">
+
+          </fieldset>
+        </form>
+        <form id="sign-in" class="sign-form">
+          <fieldset>
+            <legend> Sign In! </legend>
+            <input type="text" name="credentials[email]" placeholder= "user@email.com">
+            <br/>
+            <br/>
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <br/>
+            <br/>
+            <input type="submit" value="Sign In!">
+
+          </fieldset>
+        </form>
+        <form id="change-password" class="sign-form">
+          <fieldset>
+            <legend> Change Password! </legend>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <br/>
+            <br/>
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <br/>
+            <br/>
+            <input  type="submit" value="Change Password!">
+
+          </fieldset>
+        </form>
+        <p id="message"></p>
+      </div>
+      <div class="col-8 box column-color">
+        <div class=row>
+          <div class="col-12 ">
+            <div id="gameMessage" style="display:none">
+              <p>  Player X turn </p>
             </div>
-  <div class="col-4 box">
-    <form id="sign-up" class="sign-form"  style="visibility:visible">
-      <fieldset>
-        <legend> Sign up! </legend>
-        <input type="text" name="credentials[email]" placeholder= "user@email.com">
-        <br/>
-        <br/>
-        <input type="password" name="credentials[password]" placeholder="Password">
-        <br/>
-        <br/>
-        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-        <br/>
-        <br/>
-        <input type="submit" value="Sign up!">
-
-      </fieldset>
-    </form>
-    <form id="sign-in" class="sign-form">
-      <fieldset>
-        <legend> Sign In! </legend>
-        <input type="text" name="credentials[email]" placeholder= "user@email.com">
-        <br/>
-        <br/>
-        <input type="password" name="credentials[password]" placeholder="Password">
-        <br/>
-        <br/>
-        <input type="submit" value="Sign In!">
-
-      </fieldset>
-    </form>
-    <form id="change-password" class="sign-form">
-      <fieldset>
-        <legend> Change Password! </legend>
-        <input type="password" name="passwords[old]" placeholder="Old Password">
-        <br/>
-        <br/>
-        <input type="password" name="passwords[new]" placeholder="New Password">
-        <br/>
-        <br/>
-        <input  type="submit" value="Change Password!">
-
-      </fieldset>
-    </form>
-      <p id="message"></p>
-  </div>
-<div class="col-8 box column-color">
-<div class=row>
-<div class="col-12 ">
-<div id="gameMessage" style="display:none">
-<p>  Player X turn </p>
-</div>
-<div style= "position: absolute;margin-top: 40px;">
-<p id="gameStats" style="display:none;float:left"> hello </p>
-</div>
-</div>
-</div>
- <div class="row">
-<div class="col-lg-12">
-  <div class="dash-board" id="dashboard">
-  <button id= '0' type = "button"> </button>
-  <button id= '1' type = "button"> </button>
-  <button id= '2' type = "button"> </button>
-  <button id= '3' type = "button"> </button>
-  <button id= '4' type = "button"> </button>
-  <button id= '5' type = "button"> </button>
-  <button id= '6' type = "button"> </button>
-  <button id= '7' type = "button"> </button>
-  <button id= '8' type = "button"> </button>
-</div>
-</div>
-</div>
-
+            <div style= "position: absolute;margin-top: 40px;">
+              <p id="gameStats" style="display:none;float:left"> hello </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="dash-board" id="dashboard">
+              <button id= '0' type = "button"> </button>
+              <button id= '1' type = "button"> </button>
+              <button id= '2' type = "button"> </button>
+              <button id= '3' type = "button"> </button>
+              <button id= '4' type = "button"> </button>
+              <button id= '5' type = "button"> </button>
+              <button id= '6' type = "button"> </button>
+              <button id= '7' type = "button"> </button>
+              <button id= '8' type = "button"> </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-</div>
-
 </body>
-  </html>
+</html>

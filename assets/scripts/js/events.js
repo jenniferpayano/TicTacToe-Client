@@ -3,6 +3,7 @@ const ui = require('./ui')
 const api = require('./api')
 const store = require('../store')
 
+
 // On CreateNewGame
 const onNewGame = function (event) {
   event.preventDefault()
@@ -59,6 +60,7 @@ const playTheGame = function (play) {
   if (win === true) {
     document.getElementById('gameMessage').innerText = 'Winner is ' + play
     store.boardFull = true
+    store.winner = play
     // disables clicking event for all divs
     for (let i = 0; i <= 8; i++) {
       document.getElementById(i).style.pointerEvents = 'none'
@@ -104,8 +106,14 @@ const onNewMove = function (event) {
         .catch(ui.newMoveFailure)
     }
   } else {
+    if (store.boardFull === true) {
     // for when the div already has an X or an O
-    document.getElementById('gameMessage').innerText = 'Invalid space'
+      document.getElementById('gameMessage').innerText = 'Invalid space, Winner is ' + store.winner
+    } else if (store.play === true) {
+      document.getElementById('gameMessage').innerText = 'Invalid space, Player X turn'
+    } else if (store.play === false) {
+      document.getElementById('gameMessage').innerText = 'Invalid space, Player O turn'
+    }
   }
 }
 // checks for how many plays the user has played
