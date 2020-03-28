@@ -11,9 +11,23 @@ $border-width: 7px solid black;
 $font: 'Liu Jian Mao Cao', cursive;
 $font-form: 'Baloo Thambi 2', cursive;
 
+.clearfix:after {
+visibility: hidden;
+display: absolute;
+content: " ";
+clear: both;
+height: 0;
+font-size: 0;
+}
+
 body {
   background-color: rgba(96, 194, 244, 0.3);
 
+}
+img {
+	margin-left: 8px;
+	margin-right: 8px;
+  height: 30px;
 }
 #radio-select {
   height: fit-content;
@@ -44,6 +58,7 @@ body {
 }
 .row {
 padding: 20px 50px 50px;
+box-sizing: content-box;
 }
 .form {
   font-size: 24px;
@@ -66,6 +81,12 @@ label {
 }
 .col-12 {
   display: inline-table;
+}
+.col-6 {
+  display: flex;
+}
+.col-8{
+  text-align: -webkit-center;
 }
 #message {
   margin: auto;
@@ -102,6 +123,9 @@ form {
   font-family: $font-form;
   margin-top: 5px;
 }
+.form {
+  margin-left: 10px;
+}
 .top-left-nav {
   display:none;
    float:left;
@@ -110,6 +134,7 @@ form {
 .top-right-nav{
   display:none;
   float:right;
+  margin-left: 10px;
 }
 #gameMessage {
   display: inline-block;
@@ -152,11 +177,18 @@ form {
   pointer-events: auto;
 
 }
+
 button {
   width: 100px;
   height: 133px;
   border: 3px solid black;
 }
+
+button:hover{
+  background-color: #e7e7e7;
+}
+
+
 .success {
   color: $success-background;
 }

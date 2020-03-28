@@ -16,6 +16,7 @@ const createGameSuccesfull = function (data, event) {
   $('gameMessage').text('Player X turn')
   store.game = data.game
   store.dashBoard = ['', '', '', '', '', '', '', '', '']
+  store.won = ''
 }
 
 const createGameFailure = function () {

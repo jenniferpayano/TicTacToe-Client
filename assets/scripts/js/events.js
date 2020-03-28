@@ -3,7 +3,6 @@ const ui = require('./ui')
 const api = require('./api')
 const store = require('../store')
 
-
 // On CreateNewGame
 const onNewGame = function (event) {
   event.preventDefault()
@@ -31,6 +30,7 @@ const compareForWinner = function (arr) {
     match = store.winningPlays[i].every(e => arr.includes(e))
     if (match === true) { break }
   }
+
   return match
 }
 // Check Match for X or O
@@ -61,6 +61,7 @@ const playTheGame = function (play) {
     document.getElementById('gameMessage').innerText = 'Winner is ' + play
     store.boardFull = true
     store.winner = play
+    store.won = play
     // disables clicking event for all divs
     for (let i = 0; i <= 8; i++) {
       document.getElementById(i).style.pointerEvents = 'none'
@@ -94,6 +95,7 @@ const onNewMove = function (event) {
       api.newMove(move, store.playX, store.boardFull)
         .then(ui.newMoveSucessfull)
         .catch(ui.newMoveFailure)
+
       // and if the store play is false - false means that the play is O
     } else if (store.play === false) {
       placeO(move)
@@ -106,12 +108,15 @@ const onNewMove = function (event) {
         .catch(ui.newMoveFailure)
     }
   } else {
-    if (store.boardFull === true) {
+    if (store.boardFull === true && store.won !== '') {
     // for when the div already has an X or an O
       document.getElementById('gameMessage').innerText = 'Invalid space, Winner is ' + store.winner
-    } else if (store.play === true) {
+    } else if (store.boardFull === true && store.won === null) {
+      // for when the div already has an X or an O
+      document.getElementById('gameMessage').innerText = 'Invalid space '
+    } else if (store.boardFull !== true && store.play === true) {
       document.getElementById('gameMessage').innerText = 'Invalid space, Player X turn'
-    } else if (store.play === false) {
+    } else if (store.boardFull !== true && store.play === false) {
       document.getElementById('gameMessage').innerText = 'Invalid space, Player O turn'
     }
   }
