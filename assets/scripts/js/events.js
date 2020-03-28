@@ -30,6 +30,7 @@ const compareForWinner = function (arr) {
     match = store.winningPlays[i].every(e => arr.includes(e))
     if (match === true) { break }
   }
+
   return match
 }
 // Check Match for X or O
